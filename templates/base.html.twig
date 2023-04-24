@@ -10,12 +10,13 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
+  {% block img %}
   <link href="{{asset('img/favicon.png')}}" rel="icon">
   <link href="{{asset('img/apple-touch-icon.png')}}" rel="apple-touch-icon">
-
+{% endblock %}
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
+ {% block css %}
   <!-- Libraries CSS Files -->
   <link href="{{asset('libraries/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
   <link href="{{asset('libraries/icofont/icofont.min.css')}}" rel="stylesheet">
@@ -27,7 +28,7 @@
   <!-- Template Main CSS File -->
   <link href="{{asset('css/style.css')}}" rel="stylesheet">
 
-
+{% endblock %}
 </head>
 
 
@@ -36,18 +37,18 @@
   <header id="header" class="fixed-top">
     <div class="container-fluid d-flex justify-content-between align-items-center">
 
-      <h1 class="logo"><a href="index.html">Esprit</a></h1>
+      <h1 class="logo"><a href="{{path('app_home')}}">Esprit</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-          <li class="active"><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="resume.html">Resume</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li class="active"><a href="{{path('app_home')}}">Home</a></li>
+          <li><a href="{{path('app_about')}}">About</a></li>
+          <li><a href="{{path('app_resume')}}">Resume</a></li>
+          <li><a href="{{path('app_services')}}">Services</a></li>
+          <li><a href="{{path('app_portfolio')}}">Portfolio</a></li>
+          <li><a href="{{path('app_contact')}}">Contact</a></li>
         </ul>
       </nav><!-- .nav-menu -->
 
@@ -66,10 +67,12 @@
   <section id="hero" class="d-flex align-items-center">
     <div class="container d-flex flex-column align-items-center" data-aos="zoom-in" data-aos-delay="100">
       <h1>Esprit</h1>
+      <h1> Formulaire </h1>
+      
       <a href="about.html" class="btn-about">About Me</a>
     </div>
   </section><!-- End Hero -->
-
+{% endblock %}
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
@@ -85,7 +88,7 @@
 
   <div id="preloader"></div>
   <a href="#" class="back-to-top"><i class="bx bx-up-arrow-alt"></i></a>
-
+{% block js %}
   <!-- Libraries JS Files -->
   <script src="{{asset('libraries/jquery/jquery.min.js')}}"></script>
   <script src="{{asset('libraries/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
@@ -100,7 +103,7 @@
 
   <!-- Template Main JS File -->
   <script src="{{asset('js/main.js')}}"></script>
-
-</body>
 {% endblock %}
+</body>
+
 </html>
